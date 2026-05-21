@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane fx:id="mainRoot" minHeight="600.0" minWidth="1000.0" prefHeight="900.0" prefWidth="1400.0" style="-fx-background-color: #f8fafc; -fx-font-family: 'Cairo SemiBold';" stylesheets="@CSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kadysoft.kady.ViewerController_1">
+
+    <!-- Sidebar على الشمال -->
+    <left>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: transparent;" vbarPolicy="AS_NEEDED">
+            <VBox alignment="TOP_CENTER" maxWidth="300.0" minWidth="220.0" prefWidth="260.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 20 20 0; -fx-effect: dropshadow(gaussian, #e2e8f0, 15, 0.3, 5, 0);">
+                <padding>
+                    <Insets bottom="25.0" left="15.0" right="15.0" top="25.0" />
+                </padding>
+                <spacing>10.0</spacing>
+   
+               <HBox alignment="CENTER" minHeight="50.0" prefHeight="55.0" spacing="12.0" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-width: 0 0 1 0; -fx-padding: 10;">
+                   <children>
+   
+                       <JFXButton fx:id="printic" onAction="#printicaction" style="-fx-background-color: #10b981; -fx-text-fill: white; -fx-background-radius: 999; -fx-padding: 8 20; -fx-font-weight: bold;" styleClass="printo">
+                           <cursor>
+                               <Cursor fx:constant="HAND" />
+                           </cursor>
+                       </JFXButton>
+   
+                       <JFXButton fx:id="editorprint" onAction="#editorprintaction" style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-background-radius: 999; -fx-padding: 8 20; -fx-font-weight: bold;" styleClass="printo">
+                           <effect>
+                               <DropShadow color="#00000033" radius="8.0" />
+                           </effect>
+                       </JFXButton>
+                   </children>
+               </HBox>
+
+                <JFXButton fx:id="getallbtn" buttonType="RAISED" onAction="#getallaction" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="refresh" text="Refresh All" />
+
+                <JFXButton fx:id="getallbtn1" buttonType="RAISED" onAction="#getall1action" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="refresh" text="Refresh Dev" />
+
+                <JFXButton fx:id="seepilot" onAction="#seepilotaction" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="pilot" text="Pilot">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+
+                <Label fx:id="tablee" alignment="CENTER" onMouseClicked="#tableeaction" prefWidth="9999.0" style="-fx-padding: 12 16; -fx-text-fill: #334155; -fx-font-weight: bold; -fx-background-radius: 12;" styleClass="preview" text="Preview">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+
+                <Label fx:id="image" alignment="CENTER" onMouseClicked="#imageaction" prefWidth="9999.0" style="-fx-padding: 12 16; -fx-text-fill: #334155; -fx-font-weight: bold; -fx-background-radius: 12;" styleClass="image" text="Image">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+
+                <JFXButton fx:id="timer" onAction="#timeraction" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="report" text="Reporter" />
+
+                <JFXButton fx:id="coster" onAction="#costeraction" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="types" text="Costing" />
+
+                <JFXButton fx:id="recipeprocesses" onAction="#recipeprocessesaction" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="process" text="Processes" />
+
+                <JFXButton fx:id="calculatetime" onAction="#calculatetimeaction" prefWidth="9999.0" style="-fx-text-fill: #334155; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="calll" text="Calc Time" />
+
+                <Label fx:id="openadmin" alignment="CENTER" onMouseClicked="#openadminaction" prefWidth="9999.0" style="-fx-padding: 12 16; -fx-text-fill: #ef4444; -fx-font-weight: bold; -fx-background-radius: 12;" styleClass="admin" text="Open Admin">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+
+                <JFXButton fx:id="chemicalplan" onAction="#chemicalplanaction" prefWidth="9999.0" style="-fx-text-fill: #15803d; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="plann" text="Chemical Plan" />
+
+                <CheckBox fx:id="audit" mnemonicParsing="false" prefWidth="9999.0" style="-fx-padding: 12 16; -fx-font-weight: bold; -fx-text-fill: #334155;" styleClass="audit" text="Audit Mode" />
+
+                <ImageView fx:id="searchrecipe" fitHeight="48.0" fitWidth="48.0" onMouseClicked="#searchrecipeaction" preserveRatio="true">
+                    <image>
+                        <Image url="@love.png" />
+                    </image>
+                </ImageView>
+                 <JFXTextArea fx:id="coode" prefHeight="38.0" prefWidth="380.0" visible="false" />
+
+                <JFXButton fx:id="performance" disable="true" onAction="#performanceaction" prefWidth="9999.0" style="-fx-background-color: #f1f5f9; -fx-text-fill: #64748b; -fx-background-radius: 12; -fx-font-weight: bold; -fx-padding: 12 16;" styleClass="performance" text="Performance" visible="false" />
+
+                <!-- مسافة مرنة -->
+                <VBox VBox.vgrow="ALWAYS" />
+
+            </VBox>
+        </ScrollPane>
+    </left>
+
+    <!-- تحت - Settings -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" minHeight="45.0" prefHeight="50.0" style="-fx-background-color: #ffffff; -fx-border-color: #e2e8f0; -fx-border-width: 1 0 0 0;">
+            <padding>
+                <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+            </padding>
+            <children>
+                <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#settoaction" preserveRatio="true">
+                    <image>
+                        <Image url="@gear.png" />
+                    </image>
+                </ImageView>
+                <Label style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #475569; -fx-padding: 0 0 0 12;" text="Settings" />
+            </children>
+        </HBox>
+    </bottom>
+
+    <children>
+        <Label fx:id="link" text="Label" visible="false" />
+    </children>
+   <center>
+      <BorderPane prefHeight="672.0" prefWidth="1140.0" BorderPane.alignment="CENTER">
+         <center>
+            <SplitPane dividerPositions="0.5411764705882353" orientation="VERTICAL" prefHeight="200.0" prefWidth="1140.0" BorderPane.alignment="CENTER">
+               <items>
+                     <WebView fx:id="addo" minHeight="180.0" prefHeight="260.0" />
+         
+                        <TableView fx:id="table" onMouseClicked="#tableaction" style="-fx-font-size: 13; -fx-font-weight: bold; -fx-font-family: 'Cairo SemiBold'; -fx-background-color: #ffffff;">
+                         <padding>
+                             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                         </padding>
+                     </TableView>
+               </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </center>
+
+</BorderPane>
